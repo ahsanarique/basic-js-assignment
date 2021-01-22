@@ -105,16 +105,3 @@ function megaFriend(arrayOfNames) {
 
   return longestName;
 }
-
-console.log(
-  megaFriend([
-    "  Ra him              ",
-    "Karim",
-    "Jodu",
-    "Modhu",
-    "Kuddus Boyati",
-    "Ram Chowdhuri",
-    "Ram Chowdhury Pro Max++",
-    "255555555555555",
-  ])
-);
