@@ -56,9 +56,9 @@ function hotelCost(totalDays) {
 
   if (totalDays <= firstPhase) {
     totalCost = totalDays * 100;
-  } else if (totalDays <= 20) {
-    totalCost = firstPhase * 100 + (totalDays - firstPhase * 80);
-  } else if (totalDays > 20) {
+  } else if (totalDays > firstPhase && totalDays <= secondPhase) {
+    totalCost = firstPhase * 100 + (totalDays - firstPhase) * 80;
+  } else if (totalDays > secondPhase) {
     totalCost = firstPhase * 100 + secondPhase * 80 + rest * 50;
   }
 
@@ -102,8 +102,17 @@ function megaFriend(arrayOfNames) {
     }
   }
 
+  if (maxChar < 1) {
+    return "Name must contain minimum two characters.";
+  }
+
   longestNameIndex = countWithoutSpace.indexOf(maxChar); // First longest name location in arrayOfNames
   var longestName = arrayOfNames[longestNameIndex];
 
+  console.log(longestName.length);
+  console.log(countWithoutSpace);
+
   return longestName;
 }
+
+console.log(megaFriend(["   "]));
